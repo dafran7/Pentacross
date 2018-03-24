@@ -8,6 +8,8 @@ TagManager:
   - Weapon
   - Enemy
   - Projectile
+  - Fire
+  - Background
   layers:
   - Default
   - TransparentFX
