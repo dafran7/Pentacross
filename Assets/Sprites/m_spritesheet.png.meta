@@ -1,0 +1,357 @@
+fileFormatVersion: 2
+guid: 4a38b9d72129ecb48965ea49df1df4cb
+timeCreated: 1520296937
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: m_spritesheet_0
+    21300002: m_spritesheet_1
+    21300004: m_spritesheet_2
+    21300006: m_spritesheet_3
+    21300008: m_spritesheet_4
+    21300010: m_spritesheet_5
+    21300012: m_spritesheet_6
+    21300014: m_spritesheet_7
+    21300016: m_spritesheet_9
+    21300018: m_spritesheet_10
+    21300020: m_spritesheet_11
+    21300022: m_spritesheet_12
+    21300024: m_spritesheet_13
+    21300026: m_spritesheet_14
+    21300028: m_spritesheet_15
+    21300030: m_spritesheet_16
+    21300032: m_spritesheet_17
+    21300034: m_spritesheet_18
+    21300036: m_spritesheet_19
+    21300038: m_spritesheet_20
+    21300040: m_spritesheet_21
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: m_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 936
+        width: 119
+        height: 184
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5400961}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 936
+        width: 103
+        height: 122
+      alignment: 9
+      pivot: {x: 0.4283714, y: 0.80236715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 936
+        width: 140
+        height: 119
+      alignment: 9
+      pivot: {x: 0.2892066, y: 0.7893241}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 936
+        width: 126
+        height: 165
+      alignment: 9
+      pivot: {x: 0.5065061, y: 0.5794907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 706
+        width: 145
+        height: 191
+      alignment: 9
+      pivot: {x: 0.53392065, y: 0.534335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 725
+        width: 139
+        height: 106
+      alignment: 9
+      pivot: {x: 0.29358765, y: 0.7552053}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 479
+        width: 123
+        height: 184
+      alignment: 9
+      pivot: {x: 0.4627806, y: 0.5298565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 479
+        width: 171
+        height: 173
+      alignment: 9
+      pivot: {x: 0.4571651, y: 0.57409453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 479
+        width: 104
+        height: 118
+      alignment: 9
+      pivot: {x: 0.44717672, y: 0.66294575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 366
+        width: 79
+        height: 49
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 371
+        width: 83
+        height: 44
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 377
+        width: 92
+        height: 38
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 377
+        width: 83
+        height: 44
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 196
+        width: 129
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 196
+        width: 129
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 197
+        width: 129
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 194
+        width: 128
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 53
+        width: 134
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 41
+        width: 170
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: m_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 53
+        width: 99
+        height: 84
+      alignment: 9
+      pivot: {x: 0.4727373, y: 0.6392332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
