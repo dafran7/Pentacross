@@ -27,7 +27,7 @@ public class FlyingEnemyBehaviour : EnemyBehaviour {
 		CheckTargetDistance ();
 		if (!isDying && !isAttacking)
 			anim.Play("Idle");
-		if (targetDistance < 10) {
+		if (targetDistance < 10&&transform.position.x>target.transform.position.x) {
 			if (!isDying && !isDelayed) {
 				angle = Mathf.Asin ((transform.position.y - target.transform.position.y) / targetDistance) * Mathf.Rad2Deg;
 				StartCoroutine (Attacking ());
