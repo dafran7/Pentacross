@@ -85,7 +85,9 @@ public class MenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log (PlayerPrefs.GetInt ("NewGame"));
 		StartCoroutine (Touchy (frontMenu));
+		//Matiin pas di-build
 		PlayerPrefs.SetInt ("Coin", 999999999);
 		UpdateCoinText ();
 		ConstructSpellList ();
@@ -96,6 +98,7 @@ public class MenuManager : MonoBehaviour {
 		EquipWeapon (0);
 		ResetSpellEquip (spellEquip);
 		ResetPotionEquip (potionEquip);
+		PlayerPrefs.SetInt ("NewGame", 1);
 	}
 	
 	// Update is called once per frame
@@ -105,26 +108,53 @@ public class MenuManager : MonoBehaviour {
 
 	void ConstructPotionList(){
 		potionlist = new List<Potion> ();
+		if (PlayerPrefs.GetInt ("NewGame") == 0) {
+			for (int i = 0; i < 3; i++) {
+				PlayerPrefs.SetInt ("HeldPotion" + i.ToString (), 1);
+			}
+		}
+		Debug.Log ("HeldPotion0 : " + PlayerPrefs.GetInt ("HeldPotion0"));
 		potionlist.Add (new Potion ("Healing Potion (S)", 20, "Hope this can somehow heal you", 100, 1));
-		potionlist.Add (new Potion ("Healing Potion (M)", 35, "No healbot no worries", 200, 0));
-		potionlist.Add (new Potion ("Healing Potion (L)", 50, "I have half more life to spare", 500, 0));
+		potionlist.Add (new Potion ("Healing Potion (M)", 35, "No healbot no worries", 200, 1));
+		potionlist.Add (new Potion ("Healing Potion (L)", 50, "I have half more life to spare", 500, 1));
+		for(int i = 0; i<3; i++){
+			potionlist [i].held = PlayerPrefs.GetInt ("HeldPotion" + i.ToString ());
+		}
 	}
 
 	void ConstructSpellList(){
 		spelllist = new List<Spell> ();
+		if (PlayerPrefs.GetInt ("NewGame") == 0) {
+			for (int i = 0; i < 3; i++) {
+				PlayerPrefs.SetInt ("HeldSpell" + i.ToString (), 1);
+			}
+		}
+		Debug.Log ("HeldPotion0 : " + PlayerPrefs.GetInt ("HeldPotion0"));
 		spelllist.Add (new Spell ("Barrier", 5, "Immune to any damage for 5 seconds", "Death's scythe will not even leave a mark", 100, 1));
-		spelllist.Add (new Spell ("Might", 20, "increase damage dealt by 10 for 20 seconds", "The Light shall spread the right, The Might shall held the right", 200, 0));
-		spelllist.Add (new Spell ("Transcend", 10, "Attacks become ranged for 10 seconds", "Blade of Transcended will, cleave the end of skies!", 500, 0));
+		spelllist.Add (new Spell ("Might", 20, "increase damage dealt by 10 for 20 seconds", "The Light shall spread the right, The Might shall held the right", 200, 1));
+		spelllist.Add (new Spell ("Transcend", 10, "Attacks become ranged for 10 seconds", "Blade of Transcended will, cleave the end of skies!", 500, 1));
+		for(int i = 0; i<3; i++){
+			spelllist [i].held = PlayerPrefs.GetInt ("HeldSpell" + i.ToString ());
+		}
 	}
 
 	void ConstructWeaponList(){
 		weaponlist = new List<Weapon>();
+		if (PlayerPrefs.GetInt ("NewGame") == 0) {
+			for (int i = 1; i < 5; i++) {
+				PlayerPrefs.SetString ("SoldWeapon" + i.ToString (), "false");
+			}
+		}
 		weaponlist.Add(new Weapon("weapon0", 10, "desc0", 1, true));
 		weaponlist.Add(new Weapon("weapon1", 20, "desc1", 50, false));
 		weaponlist.Add (new Weapon ("weapon2", 30, "desc2", 100, false));
 		weaponlist.Add (new Weapon ("weapon3", 40, "desc3", 500, false));
 		weaponlist.Add (new Weapon ("weapon4", 50, "desc3", 1000, false));
 		weaponlist.Add (new Weapon ("weapon5", 100, "desc3", 10000, false));
+		for(int i = 1; i<5; i++){
+			weaponlist[i].sold = System.Convert.ToBoolean(PlayerPrefs.GetString ("SoldWeapon" + i.ToString()));
+			Debug.Log (weaponlist [i].sold);
+		}
 	}
 
 	void UpdateCoinText(){
@@ -260,6 +290,7 @@ public class MenuManager : MonoBehaviour {
 		if (coin >= price) {
 			PlayerPrefs.SetInt("Coin",PlayerPrefs.GetInt("Coin")-price);
 			weaponlist [index].sold = true;
+			PlayerPrefs.SetString ("SoldWeapon" + index.ToString(), "true");
 			UpdateCoinText ();
 			CheckBoughtWeapon ();
 			ResetEquip (weaponEquip);
@@ -357,6 +388,7 @@ public class MenuManager : MonoBehaviour {
 		int totalPrice = currentNum * spelllist [index].price;
 		if (coin >= totalPrice) {
 			spelllist [index].held += currentNum;
+			PlayerPrefs.SetInt ("HeldSpell" + index.ToString (), spelllist [index].held);
 			PlayerPrefs.SetInt ("Coin", PlayerPrefs.GetInt ("Coin") - totalPrice);
 			UpdateCoinText ();
 			spellShopNumber [index].text = "1";
@@ -429,6 +461,7 @@ public class MenuManager : MonoBehaviour {
 		int totalPrice = currentNum * potionlist [index].price;
 		if (coin >= totalPrice) {
 			potionlist [index].held += currentNum;
+			PlayerPrefs.SetInt ("HeldPotion" + index.ToString (), potionlist [index].held);
 			PlayerPrefs.SetInt ("Coin", PlayerPrefs.GetInt ("Coin") - totalPrice);
 			UpdateCoinText ();
 			potionShopNumber [index].text = "1";
@@ -470,7 +503,7 @@ public class MenuManager : MonoBehaviour {
 		Debug.Log ("Equip potion : " + potionlist[PlayerPrefs.GetInt ("EquipPotion")] .potionName);
 	}
 
-	/*public void testArea(){
+	public void testArea(){
 		SceneManager.LoadScene (0);
-	}*/
+	}
 }

@@ -24,7 +24,10 @@ public class PlayerBehaviour : MovementBehaviour {
 
 	public bool	isJumping 	= false,
 				isAttacking	= false,
-				isSliding 	= false;
+				isSliding 	= false,
+				slide = false,
+				moveFast,
+				moveSlow;
 
 	public BoxCollider2D	hitBox,
 							slideHitBox,
@@ -34,8 +37,11 @@ public class PlayerBehaviour : MovementBehaviour {
 
 	public Animator anim;
 
+	public PotionSpellCast psCast;
+
 	// Use this for initialization
 	void Start () {
+		psCast = gameObject.GetComponent<PotionSpellCast> ();
 		hitBox = gameObject.GetComponent<BoxCollider2D> ();
 		standarOffset = new Vector2 (0f, 0.16f);
 		standarSize = new Vector2 (0.73f, 1.59f);
@@ -56,37 +62,70 @@ public class PlayerBehaviour : MovementBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (psCast.immortal)
+			Debug.Log ("IMMORTALITY!");
+		if (psCast.might)
+			Debug.Log ("MIGHT!");
+		if (psCast.transcend)
+			Debug.Log ("TRANSCENDED BLADE");
 		
+
 		MoveRight ();
 		curVelocity = rb2d.velocity;
+	
 		if (Input.GetKeyDown (KeyCode.Z)) {
 			if (!isSliding && !isAttacking) {
-				isAttacking = true;
-				MeleeAttack ();
+					isAttacking = true;
+					MeleeAttack ();
 			}
-		}else if(curVelocity.y<0&&!isAttacking) {
-			anim.Play ("Fall");
-		} else if(Input.GetKey (KeyCode.UpArrow)) {
+		} else if (curVelocity.y < 0 && !isAttacking) {
+				anim.Play ("Fall");
+		} else if (Input.GetKey (KeyCode.UpArrow)) {
 			Jumping ();
-		} else if (Input.GetKeyUp (KeyCode.DownArrow)) {
-			StopSlide ();
-		} else if (Input.GetKey (KeyCode.DownArrow)&&!isJumping) {
-			Slide ();
-		} else if (Input.GetKey (KeyCode.DownArrow)&&isJumping) {
-			SetFallSpeed (dropSpeed);
-		} else if (Input.GetKey (KeyCode.RightArrow)) {
-			if(!isJumping&&!isAttacking)
+			//} else if (!slide) {
+			//		StopSlide ();
+		} else if (slide && !isJumping) {
+				Slide ();
+		} else if (slide && isJumping) {
+				SetFallSpeed (dropSpeed);
+		} else if (moveFast) {
+			if (!isJumping && !isAttacking)
 				anim.Play ("Run");
-			SpeedCheck(fastMoveSpeed);
-		} else if (Input.GetKey (KeyCode.LeftArrow)) {
-			if(!isJumping&&!isAttacking)
+			SpeedCheck (fastMoveSpeed);
+		} else if (moveSlow) {
+			if (!isJumping && !isAttacking)
 				anim.Play ("Run");
-			SpeedCheck(slowMoveSpeed);
+			SpeedCheck (slowMoveSpeed);
 		} else {
-			if(!isJumping&&!isAttacking)
+			if (!isJumping && !isAttacking)
 				anim.Play ("Run");
-			SpeedCheck(standarMoveSpeed);
+			SpeedCheck (standarMoveSpeed);
 		}
+
+	}
+
+	public void PressSlide(){
+		slide = true;
+	}
+
+	public void ReleaseSlide(){
+		slide = false;
+		StopSlide ();
+	}
+
+	public void PressMoveF(){
+		moveFast = true;
+		moveSlow = false;
+	}
+
+	public void PressMoveS(){
+		moveFast = false;
+		moveSlow = true;
+	}
+
+	public void ReleaseMove(){
+		moveFast = false;
+		moveSlow = false;
 	}
 
 	void GetAnimator(){
@@ -128,14 +167,14 @@ public class PlayerBehaviour : MovementBehaviour {
 	
 	}
 
-	void Slide(){
+	public void Slide(){
 		SpeedCheck (currentSpeed);
 		isSliding = true;
 		hitBox.size = slideSize;
 		hitBox.offset = slideOffset;
 		gameObject.GetComponent<Animator> ().Play ("Slide");
 	}
-	void StopSlide(){
+	public void StopSlide(){
 		hitBox.size = standarSize;
 		hitBox.offset = standarOffset;
 		isSliding = false;
