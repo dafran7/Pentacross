@@ -6,12 +6,20 @@ public class ChangeWeapon : MonoBehaviour {
 	public Sprite[] weaponSprite;
 	public GameObject weaponHolder, slashTrailHolder;
 	public SpriteRenderer srWeap, srSlash;
+	public List<Weapon> weaponlist;
+	public int equipWeapon, weaponDmg;
+
 	// Use this for initialization
 	void Start () {
+		weaponlist = MenuManager.weaponlist;
 		srWeap = weaponHolder.GetComponent<SpriteRenderer> ();
 		srSlash = slashTrailHolder.GetComponent<SpriteRenderer> ();
-		srWeap.sprite = weaponSprite [1];
-		srSlash.color = Color.black;
+		equipWeapon = PlayerPrefs.GetInt ("EquipWeapon");
+		Debug.Log (equipWeapon);
+		weaponDmg = weaponlist [equipWeapon].weaponDamage;
+		Debug.Log ("Damage : " + weaponDmg.ToString ());
+		srWeap.sprite = weaponSprite [equipWeapon];
+		//srSlash.color = Color.black;
 	}
 	
 	// Update is called once per frame
